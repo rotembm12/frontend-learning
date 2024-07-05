@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ArrowRight, Play } from 'lucide-react';
 import { Button } from '../ui/button';
 import { CodingExercise } from '../../assets/course';
@@ -39,8 +39,12 @@ export const CodingExerciseUI = ({
     try {
       // This is a simple and unsafe way to run code. In a real application,
       // you'd want to use a sandboxed environment for security.
-      const result = eval(code);
-      setOutput(String(result));
+      if (language === 'html') {
+        setOutput(code);
+      } else {
+        const result = eval(code);
+        setOutput(String(result));
+      }
     } catch (error) {
       setOutput(`Error: ${error?.message}`);
     }
@@ -83,30 +87,58 @@ export const CodingExerciseUI = ({
           Next <ArrowRight className='ml-2 h-4 w-4' />
         </Button>
       </div>
-      {output && (
-        <div className='mt-4 p-2 bg-gray-100 rounded'>
-          <h4 className='font-semibold'>Output:</h4>
-          {language !== 'javascript' ? { output } : <pre>{output}</pre>}
-        </div>
-      )}
+      {output && <SolutionOutput output={output} language={language} />}
       {showSolution && (
-        <div className='mt-4'>
-          <h4 className='font-semibold mb-2'>Solution:</h4>
-          <div className='h-[300px] border rounded'>
-            <Editor
-              height='100%'
-              defaultLanguage='javascript'
-              theme='vs-dark'
-              value={exercises[currentExercise].solution}
-              options={{
-                readOnly: true,
-                minimap: { enabled: false },
-                fontSize: 14,
-              }}
-            />
-          </div>
-        </div>
+        <SolutionEditor
+          solution={exercises[currentExercise].solution}
+          language={language}
+        />
       )}
     </SectionContainer>
+  );
+};
+
+const SolutionOutput = ({
+  output,
+  language,
+}: {
+  output: string;
+  language: 'html' | 'javascript' | 'css';
+}) => {
+  return (
+    <div className='mt-4 p-2 bg-gray-100 rounded'>
+      <h4 className='font-semibold'>Output:</h4>
+      {language === 'html' ? (
+        <iframe
+          title='output'
+          className='w-full h-[300px]'
+          src={'data:text/html,' + encodeURIComponent(output)}
+        />
+      ) : (
+        <pre>{output}</pre>
+      )}
+    </div>
+  );
+};
+const SolutionEditor = ({
+  solution,
+  language,
+}: {
+  solution: string;
+  language: 'html' | 'javascript' | 'css';
+}) => {
+  return (
+    <div className='h-[300px] border rounded'>
+      <Editor
+        height='100%'
+        defaultLanguage={language}
+        value={solution}
+        options={{
+          readOnly: true,
+          minimap: { enabled: false },
+          fontSize: 14,
+        }}
+      />
+    </div>
   );
 };
