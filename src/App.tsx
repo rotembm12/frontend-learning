@@ -21,14 +21,14 @@ const FrontendBasicsCourse = () => {
   };
   return (
     <ErrorBoundary key={selectedModule}>
-      <div className=' mx-auto p-10 rounded-md	'>
+      <div className=' mx-auto p-2 lg:p-10 rounded-md	'>
         <header className='flex justify-between items-center mb-6'>
           <h1 className='text-3xl font-bold'>Frontend Basics Course</h1>
           <Button variant='outline' size='icon'>
             <Menu className='h-4 w-4' />
           </Button>
         </header>
-        <div className='grid md:grid-cols-3 gap-4 rounded-md	'>
+        <div className='grid md:grid-cols-3 gap-4 rounded-md'>
           {courseContent.map((module, index) => (
             <Card
               key={index}
