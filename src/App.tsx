@@ -32,19 +32,29 @@ const FrontendBasicsCourse = () => {
         </Container>
 
         <Container>
+          <p className='text-2xl pb-8'>
+            Welcome to the Frontend Basics Course!
+            <br /> This course will teach you the basics of frontend
+            development.
+          </p>
           <div className='grid md:grid-cols-3 gap-4 rounded-md '>
             {courseContent.map((module, index) => (
               <Card
                 key={index}
                 onClick={() => viewModule(index)}
-                className={
-                  index === selectedModule
-                    ? 'border-purple-500 rounded-2xl bg-purple-500 shadow-indigo-500/50 text-white'
-                    : ''
-                }
+                className={`
+                  ease-in duration-300 bg-white cursor-pointer border-purple-500 rounded-2xl 
+                  ${
+                    index === selectedModule
+                      ? 'bg-purple-500 shadow-indigo-500/50 text-white shadow-xl'
+                      : ''
+                  }
+                  `}
               >
                 <CardHeader>
-                  <CardTitle>{module.title}</CardTitle>
+                  <CardTitle className='mb-2'>
+                    {index + 1 + '. '} {module.title}
+                  </CardTitle>
                   <CardDescription>{module.description}</CardDescription>
                 </CardHeader>
                 <CardFooter>
