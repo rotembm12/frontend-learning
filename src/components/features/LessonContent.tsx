@@ -48,8 +48,8 @@ export const LessonContent = ({ lesson }: { lesson: Lesson }) => {
             )}
           </div>
         </div>
-        <div className='p-4 bg-gray-50 dark:bg-gray-900'>
-          <p className='text-md text-gray-600 dark:text-gray-300'>
+        <div className='p-8 bg-gray-50 dark:bg-gray-900'>
+          <p className='text-lg text-gray-600 dark:text-gray-300 max-w-[800px] break-words'>
             {lesson.content}
           </p>
         </div>

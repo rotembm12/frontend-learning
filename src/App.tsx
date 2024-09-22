@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { PropsWithChildren, useState } from 'react';
 import { Menu } from 'lucide-react';
 import {
   Card,
@@ -21,45 +21,68 @@ const FrontendBasicsCourse = () => {
   };
   return (
     <ErrorBoundary key={selectedModule}>
-      <div className=' mx-auto p-2 lg:p-10 rounded-md	'>
-        <header className='flex justify-between items-center mb-6'>
-          <h1 className='text-3xl font-bold'>Frontend Basics Course</h1>
-          <Button variant='outline' size='icon'>
-            <Menu className='h-4 w-4' />
-          </Button>
-        </header>
-        <div className='grid md:grid-cols-3 gap-4 rounded-md'>
-          {courseContent.map((module, index) => (
-            <Card
-              key={index}
-              onClick={() => viewModule(index)}
-              className={
-                index === selectedModule ? 'border-red-500 rounded-md	' : ''
-              }
-            >
-              <CardHeader>
-                <CardTitle>{module.title}</CardTitle>
-                <CardDescription>{module.description}</CardDescription>
-              </CardHeader>
-              <CardFooter>
-                {index === selectedModule ? 'Currently Viewing' : 'View Module'}
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-        <Card className='mt-6'>
-          <CardHeader>
-            <CardTitle>{courseContent[selectedModule].title}</CardTitle>
-            <CardDescription>
-              {courseContent[selectedModule].description}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <CourseContent courseSection={courseContent[selectedModule]} />
-          </CardContent>
-        </Card>
+      <div className='mx-auto p-2 lg:p-10 rounded-md	bg-purple-400 '>
+        <Container>
+          <header className='  flex justify-between items-center '>
+            <h1 className='text-3xl font-bold'>Frontend Basics Course</h1>
+            <Button variant='outline' size='icon'>
+              <Menu className='h-4 w-4' />
+            </Button>
+          </header>
+        </Container>
+
+        <Container>
+          <div className='grid md:grid-cols-3 gap-4 rounded-md '>
+            {courseContent.map((module, index) => (
+              <Card
+                key={index}
+                onClick={() => viewModule(index)}
+                className={
+                  index === selectedModule
+                    ? 'border-purple-500 rounded-2xl bg-purple-500 shadow-indigo-500/50 text-white'
+                    : ''
+                }
+              >
+                <CardHeader>
+                  <CardTitle>{module.title}</CardTitle>
+                  <CardDescription>{module.description}</CardDescription>
+                </CardHeader>
+                <CardFooter>
+                  {index === selectedModule
+                    ? 'Currently Viewing'
+                    : 'View Module'}
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </Container>
+
+        <Container>
+          <Card className='mt-6 p-8 border-none'>
+            <CardHeader className=' gap-4'>
+              <CardTitle className='text-3xl'>
+                {courseContent[selectedModule].title}
+              </CardTitle>
+
+              <CardDescription className='text-xl'>
+                {courseContent[selectedModule].description}
+              </CardDescription>
+            </CardHeader>
+
+            <CardContent className='rounded-xl'>
+              <CourseContent courseSection={courseContent[selectedModule]} />
+            </CardContent>
+          </Card>
+        </Container>
       </div>
     </ErrorBoundary>
+  );
+};
+const Container = ({ children }: PropsWithChildren) => {
+  return (
+    <div className='container mx-auto bg-purple-50 p-8 my-8 rounded-2xl shadow-sm'>
+      {children}
+    </div>
   );
 };
 

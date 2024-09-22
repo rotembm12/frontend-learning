@@ -8,16 +8,16 @@ import { LessonContent } from './LessonContent';
 
 const ContentTabs = () => {
   return (
-    <TabsList>
-      <TabsTrigger value='lessons'>
+    <TabsList className='p-8 mx-auto gap-12 border-purple-400 rounded-xl border-2'>
+      <TabsTrigger value='lessons' className='text-xl'>
         <Book className='mr-2' />
         Lessons
       </TabsTrigger>
-      <TabsTrigger value='quiz'>
+      <TabsTrigger value='quiz' className='text-xl'>
         <CheckSquare className='mr-2' />
         Quiz
       </TabsTrigger>
-      <TabsTrigger value='coding'>
+      <TabsTrigger value='coding' className='text-xl'>
         <Code className='mr-2' />
         Coding
       </TabsTrigger>
@@ -33,15 +33,15 @@ export const CourseContent = ({
     <ErrorBoundary>
       <Tabs defaultValue='lessons' className='w-full'>
         <ContentTabs />
-        <TabsContent value='lessons'>
+        <TabsContent value='lessons' className='py-20'>
           {courseSection.lessons.map((lesson, index) => (
             <LessonContent key={index} lesson={lesson} />
           ))}
         </TabsContent>
-        <TabsContent value='quiz'>
+        <TabsContent value='quiz' className='py-20'>
           <Quiz quiz={courseSection.quiz} />
         </TabsContent>
-        <TabsContent value='coding'>
+        <TabsContent value='coding' className='py-20'>
           <CodingExerciseUI
             key={courseSection.title}
             exercises={courseSection.codingExercises}

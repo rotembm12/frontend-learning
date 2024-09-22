@@ -107,11 +107,18 @@ export const Quiz = ({ quiz }: { quiz: QuizQuestion[] }) => {
           </div>
         ))}
       </RadioGroup>
-      <div className='flex justify-between mt-4'>
-        <Button onClick={handlePrevious} disabled={currentQuestion === 0}>
+      <div className='flex justify-start gap-8 mt-8'>
+        <Button
+          className='text-xl bg-purple-500 text-white'
+          onClick={handlePrevious}
+          disabled={currentQuestion === 0}
+        >
           <ArrowLeft className='mr-2 h-4 w-4' /> Previous
         </Button>
-        <Button onClick={handleNext}>
+        <Button
+          onClick={handleNext}
+          className='text-xl bg-purple-500 text-white'
+        >
           {currentQuestion === quiz.length - 1 ? 'Finish' : 'Next'}{' '}
           <ArrowRight className='ml-2 h-4 w-4' />
         </Button>

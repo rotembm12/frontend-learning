@@ -1542,11 +1542,1009 @@ const stringsInJavaScriptCourseSection: CourseSection = {
     },
   ],
 };
+const dataTypesCourseSection: CourseSection = {
+  title: 'Data Types in JavaScript',
+  language: 'javascript',
+  description:
+    'An in-depth look at the various data types in JavaScript, including primitive types and objects.',
+  lessons: [
+    {
+      title: 'Introduction to Data Types',
+      content:
+        'JavaScript is a dynamically typed language, which means variables can hold values of any type. Understanding these types is crucial for effective programming. JavaScript has seven primitive data types and one complex data type (Object).',
+    },
+    {
+      title: 'Number',
+      content:
+        'The Number type represents both integer and floating-point numbers. JavaScript uses a single number type for all numeric values. Examples: let int = 42; let float = 3.14; Special values include Infinity, -Infinity, and NaN (Not a Number).',
+    },
+    {
+      title: 'String',
+      content:
+        "Strings are sequences of characters used to represent text. They can be created using single quotes, double quotes, or backticks (template literals). Example: let str = 'Hello, World!'; Template literals allow for easy string interpolation: `Hello, ${name}`.",
+    },
+    {
+      title: 'Boolean',
+      content:
+        'The Boolean type has only two values: true and false. Booleans are often used in conditional statements and loops. Truthy and falsy values in JavaScript can be coerced to true or false in boolean contexts.',
+    },
+    {
+      title: 'Undefined',
+      content:
+        "Undefined is a primitive value automatically assigned to variables that have been declared but not initialized. It's also the value returned by functions that don't explicitly return anything. Example: let x; console.log(x); // Output: undefined",
+    },
+    {
+      title: 'Null',
+      content:
+        "Null represents the intentional absence of any object value. It's often used to signify that a variable should have no value. Note that typeof null returns 'object', which is considered a bug in JavaScript. Example: let emptyValue = null;",
+    },
+    {
+      title: 'Symbol',
+      content:
+        "Symbols are unique identifiers introduced in ES6. They are often used as property keys in objects to avoid naming conflicts. Symbols are created using the Symbol() function. Example: const mySymbol = Symbol('description');",
+    },
+    {
+      title: 'BigInt',
+      content:
+        "BigInt is a numeric data type that can represent integers with arbitrary precision. It's created by appending 'n' to an integer or by calling the BigInt() function. Example: const bigNumber = 1234567890123456789012345678901234567890n;",
+    },
+    {
+      title: 'Object',
+      content:
+        "Objects are the only complex data type in JavaScript. They are collections of key-value pairs and can represent real-world entities. Arrays, functions, and dates are all types of objects. Example: let person = {name: 'John', age: 30};",
+    },
+    {
+      title: 'Type Coercion',
+      content:
+        "JavaScript performs automatic type conversion when operations involve different types. This can lead to unexpected results if not understood properly. Example: '5' + 3 results in '53' (string), while '5' - 3 results in 2 (number).",
+    },
+    {
+      title: 'Checking Types',
+      content:
+        "The typeof operator is used to determine the type of a value. Example: typeof 42 returns 'number'. For more precise checking, especially for objects, you can use Object.prototype.toString.call() or the instanceof operator.",
+    },
+    {
+      title: 'Primitive vs Reference Types',
+      content:
+        'Primitive types (like numbers and strings) are immutable and passed by value. Objects are reference types, passed by reference. This affects how they behave when assigned to variables or passed as function arguments.',
+    },
+    {
+      title: 'Type Conversion',
+      content:
+        "JavaScript provides functions for explicit type conversion: Number(), String(), and Boolean(). These can be used to convert values from one type to another. Example: Number('42') converts the string '42' to the number 42.",
+    },
+    {
+      title: 'Working with Arrays',
+      content:
+        "Arrays are a special type of object used to store ordered collections. They have methods like push(), pop(), slice(), and map() for manipulation. Example: let fruits = ['apple', 'banana', 'orange'];",
+    },
+    {
+      title: 'Date Object',
+      content:
+        'The Date object is used to work with dates and times. It provides methods for getting and setting date components, formatting dates, and performing date arithmetic. Example: let now = new Date();',
+    },
+  ],
+  quiz: [
+    {
+      question: 'How many primitive data types are there in JavaScript?',
+      options: ['5', '6', '7', '8'],
+      answer: '7',
+    },
+    {
+      question: 'Which of the following is not a primitive type in JavaScript?',
+      options: ['Number', 'String', 'Boolean', 'Array'],
+      answer: 'Array',
+    },
+    {
+      question: 'What is the result of typeof null in JavaScript?',
+      options: ['null', 'undefined', 'object', 'number'],
+      answer: 'object',
+    },
+    {
+      question:
+        'Which data type was introduced in ES6 to represent unique identifiers?',
+      options: ['Unique', 'Symbol', 'Identifier', 'Hash'],
+      answer: 'Symbol',
+    },
+    {
+      question: 'What is the purpose of the BigInt data type?',
+      options: [
+        'To represent floating-point numbers',
+        'To represent integers with arbitrary precision',
+        'To represent very small numbers',
+        'To represent complex numbers',
+      ],
+      answer: 'To represent integers with arbitrary precision',
+    },
+    {
+      question: 'What is the result of 5 + "5" in JavaScript?',
+      options: ['10', '"55"', '55', 'Error'],
+      answer: '"55"',
+    },
+    {
+      question:
+        'Which operator is used to determine the type of a value in JavaScript?',
+      options: ['typeof', 'type', 'instanceof', 'checkType'],
+      answer: 'typeof',
+    },
+    {
+      question: 'What is the difference between null and undefined?',
+      options: [
+        'They are exactly the same',
+        'null is assigned by the system, undefined by the programmer',
+        'undefined is assigned by the system, null by the programmer',
+        'null is an object, undefined is a primitive type',
+      ],
+      answer: 'undefined is assigned by the system, null by the programmer',
+    },
+    {
+      question: 'Which of the following creates a Symbol in JavaScript?',
+      options: [
+        'new Symbol()',
+        'Symbol()',
+        'Symbol.create()',
+        'createSymbol()',
+      ],
+      answer: 'Symbol()',
+    },
+    {
+      question: 'What is the type of NaN in JavaScript?',
+      options: ['String', 'Number', 'Boolean', 'Undefined'],
+      answer: 'Number',
+    },
+    {
+      question:
+        'Which method is used to convert a string to a number in JavaScript?',
+      options: [
+        'parseInt()',
+        'stringToNumber()',
+        'toNumber()',
+        'All of the above',
+      ],
+      answer: 'All of the above',
+    },
+    {
+      question: 'What is the result of typeof [1,2,3] in JavaScript?',
+      options: ['array', 'object', 'number', 'undefined'],
+      answer: 'object',
+    },
+    {
+      question:
+        'Which of the following is a correct way to create a Date object for the current date and time?',
+      options: [
+        'new Date()',
+        'Date.now()',
+        'Date.current()',
+        'new Date.today()',
+      ],
+      answer: 'new Date()',
+    },
+    {
+      question: 'What is the output of console.log(1 == "1") in JavaScript?',
+      options: ['true', 'false', 'undefined', 'NaN'],
+      answer: 'true',
+    },
+    {
+      question:
+        'Which of the following is not a valid way to create a string in JavaScript?',
+      options: [
+        "let str = 'Hello';",
+        'let str = "Hello";',
+        'let str = `Hello`;',
+        'let str = String(Hello);',
+      ],
+      answer: 'let str = String(Hello);',
+    },
+  ],
+  codingExercises: [
+    {
+      instructions:
+        'Write a function that determines the type of the input and returns it as a string.',
+      startingCode: 'function getType(input) {\n  // Your code here\n}',
+      solution: `function getType(input) {
+  return typeof input;
+}`,
+    },
+    {
+      instructions:
+        'Create a function that safely adds two numbers, handling potential non-numeric inputs.',
+      startingCode: 'function safeAdd(a, b) {\n  // Your code here\n}',
+      solution: `function safeAdd(a, b) {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    return 'Error: both inputs must be numbers';
+  }
+  return a + b;
+}`,
+    },
+    {
+      instructions:
+        'Write a function that checks if a given value is a primitive type.',
+      startingCode: 'function isPrimitive(value) {\n  // Your code here\n}',
+      solution: `function isPrimitive(value) {
+  return value !== Object(value);
+}`,
+    },
+    {
+      instructions:
+        'Create a function that converts a value to a boolean and returns the result.',
+      startingCode: 'function toBoolean(value) {\n  // Your code here\n}',
+      solution: `function toBoolean(value) {
+  return Boolean(value);
+}`,
+    },
+    {
+      instructions:
+        'Write a function that creates and returns a new Symbol with the given description.',
+      startingCode:
+        'function createSymbol(description) {\n  // Your code here\n}',
+      solution: `function createSymbol(description) {
+  return Symbol(description);
+}`,
+    },
+    {
+      instructions:
+        'Create a function that safely concatenates two inputs, converting them to strings if necessary.',
+      startingCode: 'function safeConcatenate(a, b) {\n  // Your code here\n}',
+      solution: `function safeConcatenate(a, b) {
+  return String(a) + String(b);
+}`,
+    },
+    {
+      instructions: 'Write a function that checks if a given value is NaN.',
+      startingCode: 'function isNaN(value) {\n  // Your code here\n}',
+      solution: `function isNaN(value) {
+  return Number.isNaN(value);
+}`,
+    },
+    {
+      instructions:
+        'Create a function that returns the number of milliseconds since January 1, 1970.',
+      startingCode: 'function getCurrentTimestamp() {\n  // Your code here\n}',
+      solution: `function getCurrentTimestamp() {
+  return Date.now();
+}`,
+    },
+    {
+      instructions:
+        'Write a function that creates a deep copy of an object (assuming it only contains primitive values and nested objects).',
+      startingCode: 'function deepCopy(obj) {\n  // Your code here\n}',
+      solution: `function deepCopy(obj) {
+  if (typeof obj !== 'object' || obj === null) return obj;
+  let copy = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    copy[key] = deepCopy(obj[key]);
+  }
+  return copy;
+}`,
+    },
+    {
+      instructions:
+        'Create a function that checks if two values are equal, including handling NaN correctly.',
+      startingCode: 'function areEqual(a, b) {\n  // Your code here\n}',
+      solution: `function areEqual(a, b) {
+  if (Number.isNaN(a) && Number.isNaN(b)) return true;
+  return a === b;
+}`,
+    },
+  ],
+};
+const objectsCourseSection: CourseSection = {
+  title: 'Objects in JavaScript',
+  language: 'javascript',
+  description:
+    'A comprehensive exploration of objects in JavaScript, their properties, methods, and advanced concepts.',
+  lessons: [
+    {
+      title: 'Introduction to Objects',
+      content:
+        'Objects in JavaScript are complex data types that allow you to store collections of data and functionality together. They consist of properties (key-value pairs) and methods (functions associated with the object). Objects are fundamental to JavaScript and are used to represent real-world entities in code.',
+    },
+    {
+      title: 'Creating Objects',
+      content:
+        "There are multiple ways to create objects in JavaScript. You can use object literals: let obj = {}; the Object constructor: let obj = new Object(); or constructor functions: function Person(name) { this.name = name; } let person = new Person('Alice');. Each method has its own use cases and advantages.",
+    },
+    {
+      title: 'Object Properties',
+      content:
+        "Object properties are the data stored within an object. They can be accessed using dot notation (obj.property) or bracket notation (obj['property']). Properties can be added, modified, or deleted dynamically: obj.newProp = 'value'; delete obj.oldProp;",
+    },
+    {
+      title: 'Object Methods',
+      content:
+        "Methods are functions stored as object properties. They can access and modify the object's data using the 'this' keyword. For example: let obj = { data: 5, increment() { this.data++; } }; obj.increment();",
+    },
+    {
+      title: 'Object.keys(), Object.values(), and Object.entries()',
+      content:
+        "These static methods provide ways to list an object's properties. Object.keys(obj) returns an array of property names, Object.values(obj) returns an array of values, and Object.entries(obj) returns an array of [key, value] pairs.",
+    },
+    {
+      title: 'Object Destructuring',
+      content:
+        "Object destructuring allows you to extract multiple properties from an object and assign them to variables in a single statement. For example: let {name, age} = person; This creates variables 'name' and 'age' with values from the 'person' object.",
+    },
+    {
+      title: 'Spread Operator with Objects',
+      content:
+        "The spread operator (...) can be used to create shallow copies of objects or merge objects. For example: let newObj = {...oldObj, newProp: 'value'}; This creates a new object with all properties from oldObj plus a new property.",
+    },
+    {
+      title: 'Object.assign()',
+      content:
+        'Object.assign() is used to copy the values of all enumerable properties from one or more source objects to a target object. It returns the modified target object. For example: Object.assign(target, source1, source2);',
+    },
+    {
+      title: 'Getters and Setters',
+      content:
+        "Getters and setters allow you to define how a property is accessed or modified. They're defined using get and set keywords. For example: let obj = { get latest() { return this.log[this.log.length - 1]; }, set current(str) { this.log.push(str); } };",
+    },
+    {
+      title: 'Object.freeze() and Object.seal()',
+      content:
+        'Object.freeze() prevents modification of existing properties and prevents properties from being added or removed. Object.seal() prevents new properties from being added and marks all existing properties as non-configurable.',
+    },
+    {
+      title: 'Object Prototypes',
+      content:
+        'Every JavaScript object has a prototype. The prototype is itself an object, and objects inherit methods and properties from their prototype. You can add methods and properties to a prototype using Object.prototype.',
+    },
+    {
+      title: 'Object-Oriented Programming in JavaScript',
+      content:
+        "JavaScript uses prototypal inheritance, but it also provides syntax for class-based OOP. You can create 'classes' using constructor functions or the class syntax introduced in ES6. Inheritance is achieved using the extends keyword.",
+    },
+    {
+      title: 'JSON and Objects',
+      content:
+        'JSON (JavaScript Object Notation) is a lightweight data interchange format. JavaScript provides JSON.stringify() to convert objects to JSON strings, and JSON.parse() to parse JSON strings into objects.',
+    },
+    {
+      title: 'Map and WeakMap',
+      content:
+        "Map is an object type that allows any type of key, unlike regular objects which only allow string keys. WeakMap is similar but doesn't prevent its keys from being garbage-collected. These are useful for storing private data or creating more complex data structures.",
+    },
+    {
+      title: 'Symbol as Object Keys',
+      content:
+        "Symbols are a primitive type in JavaScript that can be used as object keys. They're guaranteed to be unique, making them useful for adding properties to objects without risk of naming collisions. For example: const mySymbol = Symbol('mySymbol'); obj[mySymbol] = 'Hello';",
+    },
+  ],
+  quiz: [
+    {
+      question:
+        'Which of the following is NOT a way to create an object in JavaScript?',
+      options: [
+        'Object literal notation',
+        'Object constructor',
+        'Constructor function',
+        'Object.make()',
+      ],
+      answer: 'Object.make()',
+    },
+    {
+      question: 'What does Object.keys() return?',
+      options: [
+        'An array of all property values in the object',
+        'An array of all property names in the object',
+        'An array of all property names and values in the object',
+        'A string of all property names in the object',
+      ],
+      answer: 'An array of all property names in the object',
+    },
+    {
+      question: 'What is the purpose of the "this" keyword in object methods?',
+      options: [
+        'To refer to the global object',
+        'To refer to the object the method is called on',
+        'To create a new object',
+        'To refer to the parent object',
+      ],
+      answer: 'To refer to the object the method is called on',
+    },
+    {
+      question: 'What does Object.freeze() do?',
+      options: [
+        'Prevents new properties from being added to an object',
+        'Prevents existing properties from being removed or modified',
+        'Both A and B',
+        'Converts the object to a string',
+      ],
+      answer: 'Both A and B',
+    },
+    {
+      question:
+        'What is the difference between Object.seal() and Object.freeze()?',
+      options: [
+        'Object.seal() prevents new properties from being added, while Object.freeze() does not',
+        'Object.freeze() prevents modifications to existing properties, while Object.seal() does not',
+        'They are identical in functionality',
+        'Object.seal() works on arrays, while Object.freeze() works on objects',
+      ],
+      answer:
+        'Object.freeze() prevents modifications to existing properties, while Object.seal() does not',
+    },
+    {
+      question: 'What is the purpose of getters and setters in objects?',
+      options: [
+        'To define how a property is accessed or modified',
+        'To create private properties in an object',
+        'To inherit properties from other objects',
+        'To delete properties from an object',
+      ],
+      answer: 'To define how a property is accessed or modified',
+    },
+    {
+      question:
+        'What does the spread operator (...) do when used with objects?',
+      options: [
+        'It removes all properties from an object',
+        'It creates a deep copy of an object',
+        'It creates a shallow copy of an object',
+        'It merges two objects',
+      ],
+      answer: 'It creates a shallow copy of an object',
+    },
+    {
+      question: 'What is the purpose of Object.assign()?',
+      options: [
+        'To create a new object',
+        'To delete properties from an object',
+        'To copy the values of all enumerable properties from one or more source objects to a target object',
+        'To freeze an object',
+      ],
+      answer:
+        'To copy the values of all enumerable properties from one or more source objects to a target object',
+    },
+    {
+      question: 'What is a prototype in JavaScript?',
+      options: [
+        'A blueprint for creating objects',
+        'An object from which other objects inherit properties and methods',
+        'A way to create private properties in an object',
+        'A method to clone objects',
+      ],
+      answer:
+        'An object from which other objects inherit properties and methods',
+    },
+    {
+      question: 'What is the difference between Map and WeakMap?',
+      options: [
+        'Map allows any type of key, while WeakMap only allows object keys',
+        'WeakMap prevents its keys from being garbage-collected, while Map does not',
+        'Map has more built-in methods than WeakMap',
+        'There is no difference, they are aliases',
+      ],
+      answer:
+        'Map allows any type of key, while WeakMap only allows object keys',
+    },
+    {
+      question: 'What is the purpose of using Symbol as an object key?',
+      options: [
+        'To create enumerable properties',
+        'To create properties that are guaranteed to be unique',
+        'To create properties that cannot be accessed',
+        'To improve object performance',
+      ],
+      answer: 'To create properties that are guaranteed to be unique',
+    },
+    {
+      question: 'What does JSON.stringify() do?',
+      options: [
+        'Converts a JavaScript object to a JSON string',
+        'Parses a JSON string to a JavaScript object',
+        'Creates a deep copy of an object',
+        'Removes all methods from an object',
+      ],
+      answer: 'Converts a JavaScript object to a JSON string',
+    },
+    {
+      question: 'Which of the following is true about object destructuring?',
+      options: [
+        'It allows you to extract multiple properties from an object in a single statement',
+        'It creates a deep copy of an object',
+        'It removes properties from an object',
+        'It can only be used with arrays, not objects',
+      ],
+      answer:
+        'It allows you to extract multiple properties from an object in a single statement',
+    },
+    {
+      question: 'What is the output of Object.keys({a: 1, b: 2, c: 3})?',
+      options: [
+        "['a', 'b', 'c']",
+        '[1, 2, 3]',
+        '{a: 1, b: 2, c: 3}',
+        '["a", 1, "b", 2, "c", 3]',
+      ],
+      answer: "['a', 'b', 'c']",
+    },
+    {
+      question: 'What is the purpose of the Object.create() method?',
+      options: [
+        'To create a new object with the specified prototype object and properties',
+        'To create a shallow copy of an object',
+        'To merge two or more objects',
+        'To freeze an object',
+      ],
+      answer:
+        'To create a new object with the specified prototype object and properties',
+    },
+  ],
+  codingExercises: [
+    {
+      instructions:
+        "Create an object representing a car with properties for make, model, and year. Add a method that returns a string with the car's details.",
+      startingCode: 'const car = {\n  // Your code here\n};',
+      solution: `const car = {
+  make: 'Toyota',
+  model: 'Corolla',
+  year: 2022,
+  getDetails() {
+    return \`\${this.year} \${this.make} \${this.model}\`;
+  }
+};`,
+    },
+    {
+      instructions:
+        'Write a function that takes an object and returns an array of all the keys in the object.',
+      startingCode: 'function getKeys(obj) {\n  // Your code here\n}',
+      solution: `function getKeys(obj) {
+  return Object.keys(obj);
+}`,
+    },
+    {
+      instructions:
+        'Create a function that merges two objects, with the second object overwriting properties of the first if there are conflicts.',
+      startingCode:
+        'function mergeObjects(obj1, obj2) {\n  // Your code here\n}',
+      solution: `function mergeObjects(obj1, obj2) {
+  return {...obj1, ...obj2};
+}`,
+    },
+    {
+      instructions:
+        'Write a function that creates a deep copy of an object (assuming the object only contains primitive values and nested objects).',
+      startingCode: 'function deepCopy(obj) {\n  // Your code here\n}',
+      solution: `function deepCopy(obj) {
+  if (typeof obj !== 'object' || obj === null) return obj;
+  let copy = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    copy[key] = deepCopy(obj[key]);
+  }
+  return copy;
+}`,
+    },
+    {
+      instructions:
+        'Create an object with a getter that calculates and returns the area of a rectangle based on its width and height properties.',
+      startingCode: 'const rectangle = {\n  // Your code here\n};',
+      solution: `const rectangle = {
+  width: 5,
+  height: 10,
+  get area() {
+    return this.width * this.height;
+  }
+};`,
+    },
+    {
+      instructions:
+        'Write a function that takes an object and returns a new object with all string values converted to uppercase.',
+      startingCode: 'function upperCaseValues(obj) {\n  // Your code here\n}',
+      solution: `function upperCaseValues(obj) {
+  const result = {};
+  for (let key in obj) {
+    result[key] = typeof obj[key] === 'string' ? obj[key].toUpperCase() : obj[key];
+  }
+  return result;
+}`,
+    },
+    {
+      instructions:
+        'Create a function that checks if an object is empty (has no enumerable properties).',
+      startingCode: 'function isEmpty(obj) {\n  // Your code here\n}',
+      solution: `function isEmpty(obj) {
+  return Object.keys(obj).length === 0;
+}`,
+    },
+    {
+      instructions:
+        'Write a function that flattens a nested object, with the keys of nested objects becoming dot-separated in the resulting object.',
+      startingCode:
+        'function flattenObject(obj, prefix = "") {\n  // Your code here\n}',
+      solution: `function flattenObject(obj, prefix = "") {
+  let result = {};
+  for (let key in obj) {
+    let newKey = prefix ? \`\${prefix}.\${key}\` : key;
+    if (typeof obj[key] === 'object' && obj[key] !== null) {
+      Object.assign(result, flattenObject(obj[key], newKey));
+    } else {
+      result[newKey] = obj[key];
+    }
+  }
+  return result;
+}`,
+    },
+    {
+      instructions:
+        'Create a function that takes an array of objects and a key, and returns an object where the values of that key become the keys of the returned object.',
+      startingCode: 'function groupBy(arr, key) {\n  // Your code here\n}',
+      solution: `function groupBy(arr, key) {
+  return arr.reduce((result, obj) => {
+    (result[obj[key]] = result[obj[key]] || []).push(obj);
+    return result;
+  }, {});
+}`,
+    },
+    {
+      instructions:
+        'Write a function that creates an object from an array of key-value pairs.',
+      startingCode: 'function fromPairs(arr) {\n  // Your code here\n}',
+      solution: `function fromPairs(arr) {
+  return Object.fromEntries(arr);
+}`,
+    },
+  ],
+};
+
+const functionsCourseSection: CourseSection = {
+  title: 'Functions in JavaScript',
+  language: 'javascript',
+  description:
+    'A comprehensive exploration of functions in JavaScript, including different types of functions, parameters, scope, and advanced concepts.',
+  lessons: [
+    {
+      title: 'Introduction to Functions',
+      content:
+        'Functions in JavaScript are blocks of reusable code designed to perform a specific task. They are first-class objects, meaning they can be assigned to variables, passed as arguments, and returned from other functions. Functions are fundamental to JavaScript and are used to organize code, promote reusability, and create abstraction.',
+    },
+    {
+      title: 'Function Declaration vs Function Expression',
+      content:
+        'There are two main ways to define functions in JavaScript: function declarations (function foo() {}) and function expressions (const foo = function() {}). Function declarations are hoisted, meaning they can be called before they appear in the code, while function expressions are not.',
+    },
+    {
+      title: 'Arrow Functions',
+      content:
+        "Arrow functions, introduced in ES6, provide a more concise syntax for writing function expressions. They have a shorter syntax and lexically bind 'this' value. For example: const add = (a, b) => a + b; Arrow functions are particularly useful for short, simple functions.",
+    },
+    {
+      title: 'Function Parameters and Arguments',
+      content:
+        'Functions can accept parameters, which act as local variables within the function. When a function is called, the values passed to it are called arguments. JavaScript is flexible with parameters - you can pass more or fewer arguments than the function expects.',
+    },
+    {
+      title: 'Default Parameters',
+      content:
+        "ES6 introduced default parameters, allowing you to specify default values for function parameters. If an argument is not provided or is undefined, the default value is used. For example: function greet(name = 'Guest') { console.log(`Hello, ${name}!`); }",
+    },
+    {
+      title: 'Rest Parameters',
+      content:
+        "The rest parameter syntax allows a function to accept an indefinite number of arguments as an array. It's denoted by three dots (...) followed by the parameter name. For example: function sum(...numbers) { return numbers.reduce((a, b) => a + b, 0); }",
+    },
+    {
+      title: 'Function Scope and Closure',
+      content:
+        'Functions in JavaScript create their own scope. Variables declared inside a function are not accessible from outside. Closure occurs when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.',
+    },
+    {
+      title: 'Immediately Invoked Function Expressions (IIFE)',
+      content:
+        "An IIFE is a function that runs as soon as it is defined. It's often used to create a new scope and avoid polluting the global namespace. Syntax: (function() { /* code */ })();",
+    },
+    {
+      title: 'Higher-Order Functions',
+      content:
+        'Higher-order functions are functions that can accept other functions as arguments or return functions. They are a powerful feature in JavaScript, enabling functional programming patterns. Examples include map(), filter(), and reduce().',
+    },
+    {
+      title: 'Recursion',
+      content:
+        "Recursion is when a function calls itself until it reaches a base case. It's useful for solving problems that can be broken down into smaller, similar sub-problems. For example, calculating factorials or traversing tree-like structures.",
+    },
+    {
+      title: 'Pure Functions',
+      content:
+        "A pure function is a function that, given the same input, will always return the same output and has no side effects. Pure functions are easier to test, debug, and reason about. They're a key concept in functional programming.",
+    },
+    {
+      title: 'Function Composition',
+      content:
+        "Function composition is the process of combining two or more functions to produce a new function. It's often used in functional programming. For example: const compose = (f, g) => x => f(g(x));",
+    },
+    {
+      title: 'Currying',
+      content:
+        "Currying is the technique of translating a function that takes multiple arguments into a sequence of functions, each with a single argument. It allows partial application of a function's arguments. For example: const curry = f => a => b => f(a, b);",
+    },
+    {
+      title: 'Memoization',
+      content:
+        "Memoization is an optimization technique that speeds up function calls by storing the results of expensive function calls and returning the cached result when the same inputs occur again. It's particularly useful for recursive or computationally expensive functions.",
+    },
+    {
+      title: 'Function Binding',
+      content:
+        "The bind() method creates a new function that, when called, has its this keyword set to the provided value. It's often used to maintain the correct this context when methods are passed as callbacks. For example: const boundFunc = myFunc.bind(thisArg);",
+    },
+  ],
+  quiz: [
+    {
+      question:
+        'Which of the following is not a way to define a function in JavaScript?',
+      options: [
+        'Function declaration',
+        'Function expression',
+        'Arrow function',
+        'Function template',
+      ],
+      answer: 'Function template',
+    },
+    {
+      question:
+        'What is the main difference between function declarations and function expressions?',
+      options: [
+        'Function declarations are not hoisted',
+        'Function expressions are not hoisted',
+        'Function declarations cannot be anonymous',
+        'Function expressions cannot have names',
+      ],
+      answer: 'Function expressions are not hoisted',
+    },
+    {
+      question: 'What is the purpose of the rest parameter in a function?',
+      options: [
+        'To set a default value for a parameter',
+        'To accept an indefinite number of arguments as an array',
+        'To restrict the number of arguments a function can accept',
+        'To make a parameter optional',
+      ],
+      answer: 'To accept an indefinite number of arguments as an array',
+    },
+    {
+      question: 'What is a closure in JavaScript?',
+      options: [
+        'A function that calls itself',
+        'A function that takes another function as an argument',
+        'A function that has access to variables in its outer lexical scope',
+        'A function that returns an object',
+      ],
+      answer:
+        'A function that has access to variables in its outer lexical scope',
+    },
+    {
+      question:
+        'What is the purpose of an Immediately Invoked Function Expression (IIFE)?',
+      options: [
+        'To delay the execution of a function',
+        'To create a new scope and avoid polluting the global namespace',
+        'To make a function reusable',
+        'To bind a function to a specific context',
+      ],
+      answer: 'To create a new scope and avoid polluting the global namespace',
+    },
+    {
+      question: 'What is a higher-order function?',
+      options: [
+        'A function that only accepts primitive data types as arguments',
+        'A function that can accept other functions as arguments or return functions',
+        'A function that is defined inside another function',
+        'A function that has more than three parameters',
+      ],
+      answer:
+        'A function that can accept other functions as arguments or return functions',
+    },
+    {
+      question: 'What is recursion in the context of functions?',
+      options: [
+        'When a function calls another function',
+        'When a function returns an object',
+        'When a function calls itself',
+        'When a function has nested loops',
+      ],
+      answer: 'When a function calls itself',
+    },
+    {
+      question: 'What is a pure function?',
+      options: [
+        'A function that only uses arrow syntax',
+        'A function that always returns the same output for the same input and has no side effects',
+        'A function that only accepts numbers as arguments',
+        'A function that is defined in the global scope',
+      ],
+      answer:
+        'A function that always returns the same output for the same input and has no side effects',
+    },
+    {
+      question: 'What is function currying?',
+      options: [
+        'A technique for cooking functions',
+        'A method to combine multiple functions into one',
+        'A process of translating a function with multiple arguments into a sequence of functions with single arguments',
+        'A way to make functions execute faster',
+      ],
+      answer:
+        'A process of translating a function with multiple arguments into a sequence of functions with single arguments',
+    },
+    {
+      question: 'What does the bind() method do?',
+      options: [
+        'It permanently changes the this value of the function',
+        'It creates a new function with a fixed this value',
+        'It combines two functions into one',
+        'It makes a function accept unlimited arguments',
+      ],
+      answer: 'It creates a new function with a fixed this value',
+    },
+    {
+      question: 'What is memoization?',
+      options: [
+        'A technique for naming functions',
+        'A method for sorting function arguments',
+        'An optimization technique that stores the results of expensive function calls',
+        'A way to make functions private',
+      ],
+      answer:
+        'An optimization technique that stores the results of expensive function calls',
+    },
+    {
+      question: 'What is the main advantage of arrow functions?',
+      options: [
+        'They can access variables from the global scope',
+        'They have their own this binding',
+        'They provide a more concise syntax and lexically bind this',
+        'They can only be used as method functions',
+      ],
+      answer: 'They provide a more concise syntax and lexically bind this',
+    },
+    {
+      question: 'What is function composition?',
+      options: [
+        'Writing functions with multiple parameters',
+        'Combining two or more functions to produce a new function',
+        'Defining a function inside another function',
+        'Using recursion in a function',
+      ],
+      answer: 'Combining two or more functions to produce a new function',
+    },
+    {
+      question:
+        'What happens if you call a function with fewer arguments than it expects?',
+      options: [
+        'The function throws an error',
+        'The missing parameters are set to null',
+        'The missing parameters are set to undefined',
+        'The function refuses to execute',
+      ],
+      answer: 'The missing parameters are set to undefined',
+    },
+    {
+      question: 'What is the purpose of the Function.prototype.call() method?',
+      options: [
+        'To create a new function',
+        'To call a function with a given this value and arguments provided individually',
+        'To bind a function to a specific object',
+        "To return the function's source code as a string",
+      ],
+      answer:
+        'To call a function with a given this value and arguments provided individually',
+    },
+  ],
+  codingExercises: [
+    {
+      instructions:
+        'Write a function that takes two numbers and returns their sum.',
+      startingCode: 'function sum(a, b) {\n  // Your code here\n}',
+      solution: `function sum(a, b) {
+  return a + b;
+}`,
+    },
+    {
+      instructions:
+        'Create an arrow function that calculates the square of a number.',
+      startingCode: 'const square = // Your code here',
+      solution: 'const square = x => x * x;',
+    },
+    {
+      instructions:
+        'Write a function that accepts any number of arguments and returns their sum.',
+      startingCode: 'function sumAll(...args) {\n  // Your code here\n}',
+      solution: `function sumAll(...args) {
+  return args.reduce((sum, num) => sum + num, 0);
+}`,
+    },
+    {
+      instructions:
+        'Create a higher-order function that takes a function and a number, and returns a new function that multiplies its input by that number.',
+      startingCode: 'function multiplyBy(func, n) {\n  // Your code here\n}',
+      solution: `function multiplyBy(func, n) {
+  return function(x) {
+    return func(x) * n;
+  };
+}`,
+    },
+    {
+      instructions:
+        'Write a recursive function to calculate the factorial of a number.',
+      startingCode: 'function factorial(n) {\n  // Your code here\n}',
+      solution: `function factorial(n) {
+  if (n <= 1) return 1;
+  return n * factorial(n - 1);
+}`,
+    },
+    {
+      instructions:
+        'Create a function that returns a new function with a fixed first argument (partial application).',
+      startingCode: 'function partial(fn, x) {\n  // Your code here\n}',
+      solution: `function partial(fn, x) {
+  return function(...args) {
+    return fn(x, ...args);
+  };
+}`,
+    },
+    {
+      instructions:
+        'Write a function that creates a counter with increment, decrement, and reset functionality.',
+      startingCode: 'function createCounter() {\n  // Your code here\n}',
+      solution: `function createCounter() {
+  let count = 0;
+  return {
+    increment: () => ++count,
+    decrement: () => --count,
+    reset: () => { count = 0; return count; },
+    getCount: () => count
+  };
+}`,
+    },
+    {
+      instructions:
+        'Implement a memoization function that caches the results of expensive function calls.',
+      startingCode: 'function memoize(fn) {\n  // Your code here\n}',
+      solution: `function memoize(fn) {
+  const cache = {};
+  return function(...args) {
+    const key = JSON.stringify(args);
+    if (key in cache) {
+      return cache[key];
+    }
+    const result = fn.apply(this, args);
+    cache[key] = result;
+    return result;
+  };
+}`,
+    },
+    {
+      instructions:
+        'Create a function that composes two functions (function composition).',
+      startingCode: 'function compose(f, g) {\n  // Your code here\n}',
+      solution: `function compose(f, g) {
+  return function(x) {
+    return f(g(x));
+  };
+}`,
+    },
+    {
+      instructions: 'Write a curried function that adds three numbers.',
+      startingCode: 'function curriedAdd(a) {\n  // Your code here\n}',
+      solution: `function curriedAdd(a) {
+  return function(b) {
+    return function(c) {
+      return a + b + c;
+    };
+  };
+}`,
+    },
+  ],
+};
 
 export const courseContent: CourseSection[] = [
   htmlCourseSection,
   cssCourseSection,
   javascriptIntroCourseSection,
+  dataTypesCourseSection,
   numbersCourseSection,
   stringsInJavaScriptCourseSection,
+  functionsCourseSection,
+  objectsCourseSection,
 ];
