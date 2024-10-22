@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight, Play } from 'lucide-react';
 import { Button } from '../ui/button';
 import { CodingExercise } from '../../assets/course';
@@ -45,8 +45,8 @@ export const CodingExerciseUI = ({
         const result = eval(code);
         setOutput(String(result));
       }
-    } catch (error) {
-      setOutput(`Error: ${error?.message}`);
+    } catch (error: unknown) {
+      setOutput(`Error: ${error}`);
     }
   };
 
